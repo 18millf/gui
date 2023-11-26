@@ -15,7 +15,6 @@ class CalculatorView(Widget):
         self.result_text: Label = None
 
     def setup(self) -> None:
-        print(self.ids)
         self.left_input = self.ids["left_input"]
         self.right_input = self.ids["right_input"]
         self.result_text = self.ids["result_text"]
