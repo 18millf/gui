@@ -7,14 +7,14 @@ from kivy.uix.widget import Widget
 
 class CalculatorView(Widget):
 
-    def __init__(self, **kwargs):
+    def __init__(self, **kwargs) -> None:
         super().__init__(**kwargs)
 
         self.left_input: TextInput = None
         self.right_input: TextInput = None
         self.result_text: Label = None
 
-    def setup(self):
+    def setup(self) -> None:
         print(self.ids)
         self.left_input = self.ids["left_input"]
         self.right_input = self.ids["right_input"]
@@ -45,15 +45,15 @@ class CalculatorView(Widget):
 
 
 class CalculatorApp(App):
-    def __init__(self, **kwargs):
+    def __init__(self, **kwargs) -> None:
         super().__init__(**kwargs)
         self.root: CalculatorView
 
-    def build(self):
+    def build(self) -> Widget:
         self.root = CalculatorView()
         return self.root
 
-    def on_start(self):
+    def on_start(self) -> None:
         self.root.setup()
 
 
