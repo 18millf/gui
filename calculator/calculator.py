@@ -22,25 +22,31 @@ class CalculatorView(Widget):
     def perform_add(self) -> None:
         left = int(self.left_input.text)
         right = int(self.right_input.text)
-        self.set_result(left + right)
+        self.set_result(str(left + right))
 
     def perform_subtract(self) -> None:
         left = int(self.left_input.text)
         right = int(self.right_input.text)
-        self.set_result(left - right)
+        self.set_result(str(left - right))
 
     def perform_multiply(self) -> None:
         left = int(self.left_input.text)
         right = int(self.right_input.text)
-        self.set_result(left * right)
+        self.set_result(str(left * right))
 
     def perform_divide(self) -> None:
         left = int(self.left_input.text)
         right = int(self.right_input.text)
-        self.set_result(left // right)
 
-    def set_result(self, result: int) -> None:
+        if right == 0:
+            self.set_result("Cannot divide by zero.")
+            return
+
+        self.set_result(str(left // right))
+
+    def set_result(self, result: str) -> None:
         self.result_text.text = f"Result: {result}"
+
 
 
 class CalculatorApp(App):

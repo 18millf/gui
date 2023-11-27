@@ -1,0 +1,37 @@
+<ConverterView>:
+    BoxLayout:
+        size: root.width, root.height
+        spacing: 60
+
+        orientation: "vertical"
+
+        GridLayout:
+            cols: 2
+            spacing: 50
+            padding: 50
+
+            Label:
+                text: "Celsius: "
+                size_hint_y: None
+                height: 50
+        
+            TextInput:
+                id: celsius_text
+                input_filter: "float"
+                multiline: False
+                size_hint_y: None
+                height: 50
+                on_text_validate: root.celsius_to_farenheit()
+
+            Label:
+                text: "Farenheit: "
+                size_hint_y: None
+                height: 50
+
+            TextInput:
+                id: farenheit_text
+                input_filter: "float"
+                multiline: False
+                size_hint_y: None
+                height: 50
+                on_text_validate: root.farenheit_to_celsius()
