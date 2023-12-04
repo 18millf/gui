@@ -93,7 +93,7 @@ class DiceRollView(Widget):
 
     def roll(self):
         self.reset_face()
-        result: int = randrange(1, 6)
+        result: int = randrange(0, 6)
         self.set_face(DIE_FACES[result])
 
 
