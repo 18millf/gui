@@ -16,6 +16,16 @@ class DieFace(Flag):
     BOTTOM_RIGHT = auto()
 
 
+DIE_ONE = DieFace.MIDDLE_MIDDLE
+DIE_TWO = DieFace.TOP_RIGHT | DieFace.BOTTOM_LEFT
+DIE_THREE = DieFace.TOP_RIGHT | DieFace.MIDDLE_MIDDLE | DieFace.BOTTOM_LEFT
+DIE_FOUR = DieFace.TOP_LEFT | DieFace.TOP_RIGHT | DieFace.BOTTOM_LEFT | DieFace.BOTTOM_RIGHT
+DIE_FIVE = DieFace.TOP_LEFT | DieFace.TOP_RIGHT | DieFace.MIDDLE_MIDDLE | DieFace.BOTTOM_LEFT | DieFace.BOTTOM_RIGHT
+DIE_SIX = (DieFace.TOP_LEFT | DieFace.TOP_RIGHT | DieFace.MIDDLE_LEFT | DieFace.MIDDLE_RIGHT | DieFace.BOTTOM_LEFT |
+           DieFace.BOTTOM_RIGHT)
+
+DIE_FACES = (DIE_ONE, DIE_TWO, DIE_THREE, DIE_FOUR, DIE_FIVE, DIE_SIX)
+
 class DiceRollView(Widget):
     def __init__(self, **kwargs) -> None:
         super().__init__(**kwargs)
@@ -35,3 +45,8 @@ class DiceRollApp(App):
 
     def on_start(self):
         self.root.setup()
+
+
+if __name__ == "__main__":
+    app = DiceRollApp()
+    app.run()
