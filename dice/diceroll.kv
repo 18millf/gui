@@ -1,0 +1,55 @@
+<DiceRollView>:
+    BoxLayout:
+        size: root.width, root.height
+        spacing: 20
+
+        orientation: "vertical"
+
+        Label:
+            font_size: 32
+            text: "Roll the Dice"
+
+        GridLayout:
+            padding: 70, 0, 70, 0
+            cols: 3
+
+            Label:
+                font_size: 64
+                id: top_left
+
+            Label:
+                font_size: 64
+                id: top_middle
+
+            Label:
+                font_size: 64
+                id: top_right
+
+            Label:
+                font_size: 64
+                id: middle_left
+
+            Label:
+                font_size: 64
+                id: middle_middle
+
+            Label:
+                font_size: 64
+                id: middle_right
+
+            Label:
+                font_size: 64
+                id: bottom_left
+
+            Label:
+                font_size: 64
+                id: bottom_middle
+
+            Label:
+                font_size: 64
+                id: bottom_right
+
+        Button:
+            id: roll_button
+            text: "Roll"
+            on_press: root.roll()
