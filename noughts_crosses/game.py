@@ -40,12 +40,12 @@ class Game:
 
         self.__turn += 1
 
-        return self.__game_is_over()
+        return self.game_is_over()
 
     def __coords_to_gridspace(self, row: int, col: int) -> Grid:
         return Game.__GRID_REFERENCE[row][col]
 
-    def __game_is_over(self) -> bool:
+    def game_is_over(self) -> bool:
         if self.__turn >= 9: # cant play more than 9 turns, 3x3 grid (grid is filled, conditions for a draw)
             return True
         
